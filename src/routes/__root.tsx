@@ -1,4 +1,4 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider, useQueryClient } from "@tanstack/react-query";
 import {
   Outlet,
   Link,
@@ -132,8 +132,6 @@ function AuthSync() {
   }, [router, queryClient]);
   return null;
 }
-
-import { useQueryClient } from "@tanstack/react-query";
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
