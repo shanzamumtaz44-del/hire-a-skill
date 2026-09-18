@@ -16,7 +16,8 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { CATEGORIES, formatMoney } from "@/lib/constants";
 import { supabase } from "@/integrations/supabase/client";
 
-type ProjectSearch = { q: string; category: string; sort: "newest" | "budget_high" | "budget_low" };
+type SortOption = "newest" | "budget_high" | "budget_low";
+type ProjectSearch = { q?: string; category?: string; sort?: SortOption };
 
 export const Route = createFileRoute("/projects/")({
   validateSearch: (search: Record<string, unknown>): ProjectSearch => ({
@@ -42,11 +43,14 @@ export const Route = createFileRoute("/projects/")({
 });
 
 function JobBoard() {
-  const { q, category, sort } = Route.useSearch();
-  const navigate = useNavigate({ from: "/projects" });
+  const search = Route.useSearch();
+  const q = search.q ?? "";
+  const category = search.category ?? "all";
+  const sort = search.sort ?? "newest";
+  const navigate = useNavigate({ from: "/projects/" });
 
   const setSearch = (patch: Partial<ProjectSearch>) => {
-    void navigate({ search: (prev) => ({ ...prev, ...patch }) });
+    void navigate({ search: (prev: ProjectSearch) => ({ ...prev, ...patch }) });
   };
 
   const { data, isLoading } = useQuery({
@@ -105,7 +109,7 @@ function JobBoard() {
               ))}
             </SelectContent>
           </Select>
-          <Select value={sort} onValueChange={(v) => setSearch({ sort: v as ProjectSearch["sort"] })}>
+          <Select value={sort} onValueChange={(v) => setSearch({ sort: v as SortOption })}>
             <SelectTrigger className="sm:w-48">
               <SelectValue placeholder="Sort" />
             </SelectTrigger>

@@ -96,7 +96,7 @@ function Landing() {
             <Link
               key={category}
               to="/projects"
-              search={{ category, q: "", sort: "newest" }}
+              search={{ category }}
               className="group rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary/60 hover:bg-secondary/40"
             >
               <p className="font-medium group-hover:text-primary">{category}</p>
