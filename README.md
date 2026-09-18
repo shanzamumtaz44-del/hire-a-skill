@@ -1,14 +1,36 @@
-# Welcome to your Lovable project
+# SkillBridge Platform
+
+Implement the requested scope now; use internal planning and do not present another implementation plan for user approval.
+
+Create the complete SkillBridge student freelance platform with Lovable Cloud / Supabase backend integration.
+
+User requirements:
+- Enable Lovable Cloud backend with Supabase Auth for student and client accounts (email/password).
+- Create database tables with Row Level Security (RLS) policies:
+  - profiles: linked to auth.users, with role (student or client), full name, university, major, bio, avatar, and hourly rate.
+  - skills: skill directory and profile_skills junction for student tagging.
+  - projects: freelance briefs posted by clients (title, category, description, budget, timeline, status).
+  - applications: proposals submitted by students (cover letter, bid amount, estimated days, status).
+- Complete user workflows:
+  - Landing page with category discovery and value proposition.
+  - Auth flow for student and client registration and login.
+  - Job board with search, category filtering, and budget sorting.
+  - Detailed project brief view with live proposal submission form.
+  - Post a Project form for clients to add new jobs to the database.
+  - Dashboard to view applied proposals or posted projects.
+- Wire all components directly to the database without mock data.
 
 This project was built with [Lovable](https://lovable.dev).
 
+**Live app**: https://hire-a-skill.lovable.app
+
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/d8c5e965-644e-4777-b5d7-d6eb447846e6).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +42,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
