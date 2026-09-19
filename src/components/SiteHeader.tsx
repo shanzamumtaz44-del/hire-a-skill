@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "@tanstack/react-router";
-import { GraduationCap, LogOut } from "lucide-react";
+import { GraduationCap, LogOut, UserRound } from "lucide-react";
 import { useQueryClient } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
@@ -31,6 +31,9 @@ export function SiteHeader() {
           <Button asChild variant="ghost" size="sm">
             <Link to="/projects">Browse work</Link>
           </Button>
+          <Button asChild variant="ghost" size="sm">
+            <Link to="/students">Find students</Link>
+          </Button>
           {session ? (
             <>
               <Button asChild variant="ghost" size="sm">
@@ -41,6 +44,11 @@ export function SiteHeader() {
                   <Link to="/post-project">Post a project</Link>
                 </Button>
               )}
+              <Button asChild variant="ghost" size="icon" aria-label="Your profile">
+                <Link to="/profile">
+                  <UserRound className="size-4" />
+                </Link>
+              </Button>
               <Button variant="ghost" size="icon" aria-label="Sign out" onClick={signOut}>
                 <LogOut className="size-4" />
               </Button>
