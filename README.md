@@ -20,13 +20,10 @@ User requirements:
   - Dashboard to view applied proposals or posted projects.
 - Wire all components directly to the database without mock data.
 
-This project was built with [Lovable](https://lovable.dev).
 
-**Live app**: https://hire-a-skill.lovable.app
 
 ## Build with Lovable
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/d8c5e965-644e-4777-b5d7-d6eb447846e6).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
 - **Stay in sync**: every change made in Lovable is committed straight to this repository.
